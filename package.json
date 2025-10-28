@@ -22,5 +22,5 @@
     "format": "make format || true",
     "download": "make install || true"
   },
-  "packageManager": "pnpm@10.19.0"
+  "packageManager": "pnpm@10.20.0"
 }
