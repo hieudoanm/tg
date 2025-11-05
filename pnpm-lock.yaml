@@ -18,7 +18,7 @@ importers:
         specifier: 2.6.0
         version: 2.6.0
 
-  languages/cli/node.js/commander:
+  packages/cli/node.js/commander:
     dependencies:
       commander:
         specifier: 14.0.2
@@ -58,7 +58,7 @@ importers:
         specifier: 8.46.3
         version: 8.46.3(eslint@9.39.1)(typescript@5.9.3)
 
-  languages/cli/node.js/oclif:
+  packages/cli/node.js/oclif:
     dependencies:
       '@oclif/core':
         specifier: 4.8.0
@@ -95,7 +95,7 @@ importers:
         specifier: 8.46.3
         version: 8.46.3(eslint@9.39.1)(typescript@5.9.3)
 
-  languages/cli/node.js/yargs:
+  packages/cli/node.js/yargs:
     dependencies:
       figlet:
         specifier: 1.9.3
