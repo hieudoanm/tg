@@ -1,0 +1,27 @@
+{
+  "name": "@telegram/cli",
+  "version": "0.0.1",
+  "description": "Command Line Interface",
+  "keywords": [],
+  "homepage": "https://github.com/hieudoanm/tg-cli#readme",
+  "bugs": {
+    "url": "https://github.com/hieudoanm/tg-cli/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hieudoanm/tg-cli.git"
+  },
+  "license": "GPL-3.0",
+  "author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",
+  "packageManager": "pnpm@10.20.0",
+  "scripts": {
+    "lint": "turbo run lint",
+    "build": "turbo run build",
+    "format": "turbo run format"
+  },
+  "devDependencies": {
+    "husky": "9.1.7",
+    "rimraf": "6.1.0",
+    "turbo": "2.6.0"
+  }
+}

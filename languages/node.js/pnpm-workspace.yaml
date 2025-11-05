@@ -1,0 +1,4 @@
+packages:
+  - commander
+  - oclif
+  - yargs
