@@ -17,6 +17,7 @@
   "scripts": {
     "lint": "turbo run lint",
     "build": "turbo run build",
+    "postbuild": "touch ./docs/.nojekyll",
     "format": "turbo run format",
     "prepare": "husky || true"
   },

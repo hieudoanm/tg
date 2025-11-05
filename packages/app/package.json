@@ -1,0 +1,76 @@
+{
+	"name": "@telegram/mini-app",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Telegram Mini App",
+	"keywords": [
+		"telegram",
+		"mini",
+		"app"
+	],
+	"homepage": "https://github.com/hieudoanm/telegram-mini-app#readme",
+	"bugs": {
+		"url": "https://github.com/hieudoanm/telegram-mini-app/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/hieudoanm/telegram-mini-app.git"
+	},
+	"license": "MIT",
+	"author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",
+	"packageManager": "pnpm@10.20.0",
+	"scripts": {
+		"format": "prisma format && prettier --cache --write .",
+		"prisma:generate": "prisma format && prisma generate",
+		"prelint": "pnpm prisma:generate",
+		"lint": "eslint .",
+		"predev": "pnpm prisma:generate && kill-port 3000",
+		"dev": "next dev",
+		"prebuild": "pnpm prisma:generate && rimraf .next",
+		"build": "next build",
+		"prestart": "pnpm prisma:generate && kill-port 3000",
+		"start": "next start",
+		"pretest": "pnpm prisma:generate && rimraf coverage",
+		"test": "jest"
+	},
+	"dependencies": {
+		"@prisma/client": "6.19.0",
+		"@tanstack/react-query": "5.90.7",
+		"@ton/core": "0.62.0",
+		"@ton/crypto": "3.3.0",
+		"@ton/ton": "16.0.0",
+		"@tonconnect/ui-react": "2.3.1",
+		"@trpc/client": "11.7.1",
+		"@trpc/next": "11.7.1",
+		"@trpc/react-query": "11.7.1",
+		"@trpc/server": "11.7.1",
+		"buffer": "6.0.3",
+		"cookie": "1.0.2",
+		"jsonwebtoken": "9.0.2",
+		"next": "16.0.1",
+		"react": "19.2.0",
+		"react-dom": "19.2.0",
+		"react-icons": "5.5.0",
+		"zod": "4.1.12"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "3.3.1",
+		"@tailwindcss/postcss": "4.1.16",
+		"@types/jsonwebtoken": "9.0.10",
+		"@types/node": "24.10.0",
+		"@types/react": "19.2.2",
+		"@types/react-dom": "19.2.2",
+		"eslint": "9.39.1",
+		"eslint-config-next": "16.0.1",
+		"husky": "9.1.7",
+		"jest": "30.2.0",
+		"kill-port": "2.0.1",
+		"ngrok": "5.0.0-beta.2",
+		"prettier": "3.6.2",
+		"prettier-plugin-tailwindcss": "0.7.1",
+		"prisma": "6.19.0",
+		"rimraf": "6.1.0",
+		"tailwindcss": "4.1.16",
+		"typescript": "5.9.3"
+	}
+}

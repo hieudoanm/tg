@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["public", "telegram"]
+}
+
+model User {
+  id              BigInt  @id @default(0) @map("id") @db.BigInt
+  username        String  @default("") @map("username") @db.VarChar(255)
+  firstName       String  @default("") @map("first_name") @db.VarChar(255)
+  lastName        String  @default("") @map("last_name") @db.VarChar(255)
+  languageCode    String  @default("") @map("language_code") @db.VarChar(255)
+  photoUrl        String  @default("") @map("photo_url") @db.VarChar(255)
+  allowsWriteToPM Boolean @default(false) @map("allows_write_to_pm") @db.Boolean
+
+  @@index([id, username])
+  @@map("users")
+  @@schema("telegram")
+}
