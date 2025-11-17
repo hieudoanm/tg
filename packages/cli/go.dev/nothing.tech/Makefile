@@ -1,12 +1,26 @@
+.PHONY: lint format build install all
+
+BIN_DIR := bin
+BIN_NAME := nothing
+SRC := ./main.go
+
+## Commands
+lint:
+	go vet ./...
+
 format:
 	go fmt ./...
 
-vet:
-	go vet ./...
+## Build binary into ./bin
+build: format lint
+	@mkdir -p $(BIN_DIR)
+	go build -o $(BIN_DIR)/$(BIN_NAME) $(SRC)
 
-build:
-	go fmt ./...
-	go vet ./...
-	go build -o ./bin/nothing ./main.go
-	sudo rm -rf /usr/local/bin/nothing
-	sudo cp ./bin/nothing /usr/local/bin/
+## Install binary into ~/bin
+install: build
+	@mkdir -p $(HOME)/bin
+	cp $(BIN_DIR)/$(BIN_NAME) $(HOME)/bin/
+	chmod +x $(HOME)/bin/$(BIN_NAME)
+	@echo "Installed to $$HOME/bin"
+	@echo "Make sure $$HOME/bin is in your PATH:"
+	@echo '  export PATH="$$HOME/bin:$$PATH"'
